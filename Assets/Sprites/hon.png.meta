@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: f4548bd105bd5384997dd6c631a33a72
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hon
+    21300002: hon_0
+    21300004: hon_1
+    21300006: hon_2
+    21300008: hon_3
+    21300010: hon_4
+    21300012: hon_5
+    21300014: hon_6
+    21300016: hon_7
+    21300018: hon_8
+    21300020: hon_9
+    21300022: hon_10
+    21300024: hon_11
+    21300026: hon_12
+    21300028: hon_13
+    21300030: hon_14
+    21300032: hon_15
+    21300034: hon_16
+    21300036: hon_17
+    21300038: hon_18
+    21300040: hon_19
+    21300042: hon_20
+    21300044: hon_21
+    21300046: hon_22
+    21300048: hon_23
+    21300050: hon_24
+    21300052: hon_25
+    21300054: hon_26
+    21300056: hon_27
+    21300058: hon_28
+    21300060: hon_29
+    21300062: hon_30
+    21300064: hon_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hon_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 294
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_11
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_12
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_13
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_14
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_15
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 204
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_17
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_18
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_19
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_20
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_22
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_23
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 114
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_25
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_26
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_27
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_28
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_29
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_30
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hon_31
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 24
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
