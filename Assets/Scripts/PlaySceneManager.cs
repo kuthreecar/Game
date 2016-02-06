@@ -15,7 +15,6 @@ public class PlaySceneManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemyArr = new List<GameObject>();
-		testgo = Instantiate(enemyOrgGo) as GameObject;
 		//for (int i=0; i<10; i++){
 			//spawn(i);
 		//}
@@ -24,7 +23,6 @@ public class PlaySceneManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//moveDown(testgo);
 	}
 	
 	void spawn(){
@@ -34,9 +32,17 @@ public class PlaySceneManager : MonoBehaviour {
 		float ypos = Screen.height;
 		float zpos = -1f;
 		Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(xpos, ypos, 0));
-		pos.y -= (enemy.gameObject.GetComponent<BoxCollider2D>().size.y)/2;
+		pos.y -= (enemy.gameObject.GetComponent<BoxCollider>().size.y)/2;
 		enemy.position = new Vector3(pos.x, pos.y, zpos);
 		enemyArr.Add(enemy.gameObject);
 	}
-	
+
+	public static void addScore(int score){
+		ScoreManager scoreM = GameObject.Find("Score").GetComponent<ScoreManager>();
+		if (scoreM!=null){
+			Debug.Log("point added by " + score);
+			scoreM.addPoint(score);
+		}
+	}
+
 }
