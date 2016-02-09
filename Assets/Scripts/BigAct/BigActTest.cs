@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BigActButton : MonoBehaviour {
+public class BigActTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,12 +11,5 @@ public class BigActButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void OnMouseClick(){
-		startBigAct();
-	}
-
-	void startBigAct(){
 	}
 }
