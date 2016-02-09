@@ -47,6 +47,7 @@ public class EnemyType : MonoBehaviour {
 				Vector3 transpos = Camera.main.WorldToScreenPoint (bc.bounds.max);
 				if ( transpos.y < 0){
 					//Debug.Log ("delete gameObject with y=" + transpos.y);
+					PlaySceneManager.getInstance().decreaseHealth(10);
 					Destroy(trans.gameObject);
 				}
 			}

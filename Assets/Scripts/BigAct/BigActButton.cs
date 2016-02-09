@@ -32,7 +32,13 @@ public class BigActButton : MonoBehaviour {
 				bigActArr.Add (childGo.GetComponent<BigAct>());
 			}
 		}
-		yield return new WaitForSeconds (0.5f);
+
+		BigActAnim[] animArr = FindObjectsOfType (typeof(BigActAnim)) as BigActAnim[];
+		foreach (BigActAnim anim in animArr){
+			anim.playAnim();
+		}
+
+		yield return new WaitForSeconds (2f);
 		foreach (BigAct bigAct in bigActArr) {
 				bigAct.killAll ();
 		}
