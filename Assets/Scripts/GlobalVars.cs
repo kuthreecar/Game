@@ -13,5 +13,7 @@ public class GlobalVars : MonoBehaviour {
 		Lunhui
 	}
 	public static Team team = Team.Batu;
-	
+
+	public static bool canBigAct = false;
+
 }
