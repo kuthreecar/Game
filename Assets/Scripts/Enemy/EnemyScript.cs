@@ -21,12 +21,12 @@ public class EnemyScript : EnemyType {
 	}
 	
 	void OnMouseDown(){
-		Debug.Log ("Enemy killed " + this);
-		getMurdered ();
+		//Debug.Log ("Enemy killed " + this);
+		if (!PlaySceneManager.getInstance().gameEnds) getMurdered ();
 	}
 
 	public void getMurdered(){
-		Debug.Log ("is killed=" + isKilled);
+		//Debug.Log ("is killed=" + isKilled);
 		if (!isKilled) {
 			isKilled = true;
 

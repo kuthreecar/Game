@@ -4,18 +4,36 @@ using System.Collections.Generic;
 
 public class BigActButton : MonoBehaviour {
 
+	public GameObject bigActGo;
+
+	private bool enabledBtn = false;
+
+	private float startTime;
+	public float cdTime = 10;
+	
+	public Sprite activeBtn;
+	public Sprite inactiveBtn;
+
 	// Use this for initialization
 	void Start () {
-	
+		resetCD();
+		refreshSprite ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!enabledBtn && Time.time - startTime > cdTime) {
+			enableBigAct();
+		}
 	}
 
 	void OnMouseDown(){
-		StartCoroutine(startBigAct());
+		if (enabledBtn && !GamePause.isPause())
+			StartCoroutine(startBigAct());
+	}
+
+	public void setBigActGo(GameObject go){
+		bigActGo = go;
 	}
 
 	IEnumerator startBigAct(){
@@ -23,9 +41,9 @@ public class BigActButton : MonoBehaviour {
 		GamePause.pauseGame ();
 		//GameObject bigAct = GameObject.Find("BigAct");
 		List<BigAct> bigActArr=new List<BigAct>();
-		for (int i = 0; i < this.transform.childCount; ++i)
+		for (int i = 0; i < bigActGo.transform.childCount; ++i)
 		{
-			GameObject childGo =this.transform.GetChild(i).gameObject;
+			GameObject childGo =bigActGo.transform.GetChild(i).gameObject;
 			childGo.SetActive(true);
 
 			if (childGo.GetComponent<BigAct>()!=null){
@@ -42,11 +60,45 @@ public class BigActButton : MonoBehaviour {
 		foreach (BigAct bigAct in bigActArr) {
 				bigAct.killAll ();
 		}
-		for (int i = 0; i < this.transform.childCount; ++i)
+		for (int i = 0; i < bigActGo.transform.childCount; ++i)
 		{
-			this.transform.GetChild(i).gameObject.SetActive(false);
+			bigActGo.transform.GetChild(i).gameObject.SetActive(false);
 		}
 		GamePause.continueGame ();
+		disableBigAct ();
+		PlaySceneManager.getInstance ().resetTimers ();
 
 	}
+
+	void enableBigAct(){
+		enabledBtn = true;
+		//GetComponent<SpriteRenderer> ().sprite = activeBtn;
+		refreshSprite ();
+	}
+
+	void disableBigAct(){
+		enabledBtn = false;
+		//GetComponent<SpriteRenderer> ().sprite = inactiveBtn;
+		resetCD ();
+		refreshSprite ();
+	}
+
+	void resetCD(){
+		startTime = Time.time;
+	}
+
+	public void setBtnSprite(Sprite normalSprite, Sprite lockSprite){
+		activeBtn = normalSprite;
+		inactiveBtn = lockSprite;
+		refreshSprite ();
+	}
+
+	void refreshSprite(){
+		if (enabledBtn) {
+			GetComponent<SpriteRenderer> ().sprite = activeBtn;
+		} else {
+			GetComponent<SpriteRenderer> ().sprite = inactiveBtn;
+		}
+	}
+
 }

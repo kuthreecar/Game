@@ -10,6 +10,8 @@ public class SelectSceneManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gotLength = 0;
+		GlobalVars.team = GlobalVars.Team.Batu;
+		unlockedBigAct = false;
 	}
 	
 	// Update is called once per frame

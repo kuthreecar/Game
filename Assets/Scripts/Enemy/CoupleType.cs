@@ -17,7 +17,7 @@ public class CoupleType : EnemyType {
 
 	void OnMouseDown(){
 		//Debug.Log("mouse clicked");
-		getMurdered ();
+		if (!PlaySceneManager.getInstance().gameEnds) getMurdered ();
 	}
 
 	public bool childDestroy(){

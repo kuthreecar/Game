@@ -6,6 +6,7 @@ public class EnemyType : MonoBehaviour {
 	public int score = 3;
 	public float speed = 1.1f;
 	public int enemyId = 0;
+	public int attackPt = 10;
 
 	protected bool isKilled = false;
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class EnemyType : MonoBehaviour {
 			Vector3 temppos = trans.position;
 			PlaySceneManager psm = PlaySceneManager.getInstance (); 
 			if (psm != null) {
-				speed *= psm.totalSpeed;
+				speed *= (psm.totalSpeed/100);
 			}
 			
 			//Debug.Log ("movedown at speed " + speed);
@@ -47,7 +48,7 @@ public class EnemyType : MonoBehaviour {
 				Vector3 transpos = Camera.main.WorldToScreenPoint (bc.bounds.max);
 				if ( transpos.y < 0){
 					//Debug.Log ("delete gameObject with y=" + transpos.y);
-					PlaySceneManager.getInstance().decreaseHealth(10);
+					PlaySceneManager.getInstance().decreaseHealth(attackPt);
 					Destroy(trans.gameObject);
 				}
 			}

@@ -10,7 +10,8 @@ public class start_btn : MonoBehaviour {
 
 	void Start(){
 		
-		//startbtn_sprite = transform.Find("start_btn").GetComponent<SpriteScript>();
+		startbtn_sprite = transform.Find("start_btn").GetComponent<SpriteScript>();
+		startbtn_sprite.Show ();
 		
 		startbtnover_sprite = transform.Find("start_btn_over").GetComponent<SpriteScript>();
 		startbtnover_sprite.Hide();
@@ -18,14 +19,17 @@ public class start_btn : MonoBehaviour {
 	}
 	
 	void OnMouseEnter(){
-		if(!GamePause.isPause())
+		//if(!GamePause.isPause()){
 		startbtnover_sprite.Show();
+		startbtn_sprite.Hide ();
+		//}
 	}
 	void OnMouseExit(){
 		startbtnover_sprite.Hide();
+		startbtn_sprite.Show ();
 	}	
 	void OnMouseDown(){
-		if(!GamePause.isPause())
+		//if(!GamePause.isPause())
 		 Application.LoadLevel (nextLevel); 
 	}	
 

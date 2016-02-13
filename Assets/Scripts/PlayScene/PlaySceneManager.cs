@@ -15,11 +15,17 @@ public class PlaySceneManager : MonoBehaviour {
 	int spawnid = 0;
 	public float spawnTime = 3f;
 	public float screenWidthOffset = 50;
-	public float totalSpeed = 1f;
 	public float btwSpriteDist = 0.1f;
 
-	public List<GameObject> enemyOrgArr;
+	public float totalSpeed = 1f;
+	public float totalAcc = 0.1f;
 
+	public List<GameObject> enemyOrgArr;
+	private float startTime;
+	private float startTime2;
+	private int spawnNo=1;
+
+	public bool gameEnds = false;	
 	void Awake() {
 		if (instance==null) {
 			instance = this;
@@ -39,15 +45,32 @@ public class PlaySceneManager : MonoBehaviour {
 		//for (int i=0; i<10; i++){
 			//spawn(i);
 		//}
-		InvokeRepeating ("spawn", spawnTime, spawnTime);
+		spawn();
+		startTime = Time.time;
+		startTime2 = Time.time;
+		gameEnds = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (!GamePause.isPause()){
+			float spawnTempTime = spawnTime/(totalSpeed*10);
+			Debug.Log ("spawn at " + spawnTempTime);
+			if (Time.time - startTime > 2) {
+				totalSpeed += totalAcc;
+				startTime = Time.time;
+			}
+			if ((Time.time - startTime2) > spawnTempTime) {
+				spawn();
+				startTime2 = Time.time;
+			}
+		}
 	}
 	
 	void spawn(){
+		//Debug.Log ("spawn at " + (spawnTime/(totalSpeed*100*spawnNo)));
 		if (!GamePause.isPause()){
+			//for (int i=0; i<spawnNo; i++){
 			//Debug.Log("Instantiate at " + position);
 			Transform enemy = makeEnemyGameObject ().transform;
 			enemy.GetComponent<EnemyType>().setId(spawnid);
@@ -59,6 +82,7 @@ public class PlaySceneManager : MonoBehaviour {
 			pos.y -= (enemy.gameObject.GetComponent<BoxCollider>().size.y)/2;
 			enemy.position = new Vector3(pos.x, pos.y, zpos);
 			enemyArr.Add(enemy.gameObject);
+			//}
 		}
 	}
 
@@ -87,9 +111,9 @@ public class PlaySceneManager : MonoBehaviour {
 			else if (i==1){
 				xpos =  (eneChild.GetComponent<BoxCollider>().size.x + btwSpriteDist);
 			}
-			Debug.Log (xpos +", "+ypos+", "+zpos);
+			//Debug.Log (xpos +", "+ypos+", "+zpos);
 			eneChild.position = new Vector3(xpos, ypos, zpos);
-			Debug.Log ("eneChild="+eneChild.position);
+			//Debug.Log ("eneChild="+eneChild.position);
 			eneChild.parent = enemy.transform;
 			tempArr.Remove(ranEne);
 		} 
@@ -102,7 +126,8 @@ public class PlaySceneManager : MonoBehaviour {
 		ScoreManager scoreM = GameObject.Find("Score").GetComponent<ScoreManager>();
 		if (scoreM!=null){
 			//Debug.Log("point added by " + score);
-			scoreM.addPoint(score);
+			int value = (int)(score * (1 + getInstance().totalSpeed/100));
+			scoreM.addPoint(value);
 		}
 	}
 
@@ -112,8 +137,15 @@ public class PlaySceneManager : MonoBehaviour {
 
 	public static void endGame(){
 		Debug.Log ("Game Ends");
+		getInstance().gameEnds = true;
 		GamePause.pauseGame();
+		Application.LoadLevel ("RankingScene"); 
+		GamePause.continueGame();
 	}
 
+	public void resetTimers(){
+		startTime = Time.time;
+		startTime2= Time.time;
+	}
 
 }
