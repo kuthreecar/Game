@@ -19,6 +19,8 @@ public class CustomPSceneManager : MonoBehaviour {
 
 	public Sprite[] backgroundArr;
 
+	public GameObject[] bigActEventArr;
+
 	// Use this for initialization
 	void Start () {
 		int arrPos = 0;
@@ -56,6 +58,7 @@ public class CustomPSceneManager : MonoBehaviour {
 		bigActSprite.sprite = bigActSpriteArr [pos];
 		eyeSprite.sprite = eyeArr [pos];
 		bbb.setBtnSprite (btnArr[pos], btnLockArr[pos]);
+		bbb.setEvent (bigActEventArr[pos]);
 	}
 
 	void setBackground(){

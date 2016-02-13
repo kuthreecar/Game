@@ -45,21 +45,22 @@ public class RankingManager : MonoBehaviour {
 	void initText(){
 		//TextMesh textmesh = GetComponent<TextMesh> ();
 		string namesResult = "";
-		for(int i=0; i<nameArr.Length; i++){
-			namesResult = namesResult + (i+1) + ". " + nameArr[i] + '\n';
+		for(int i=0; i<10; i++){
+			//namesResult = namesResult + (i+1) + ". " + nameArr[i] + '\n';
+			transform.GetChild (i).GetComponent<NmPtObj>().setValue(i+1, nameArr[i], pointArr[i]);
 		}
-		namesResult = namesResult.Substring(0,namesResult.Length - 1);
-		names.text = namesResult;
+//		namesResult = namesResult.Substring(0,namesResult.Length - 1);
+//		names.text = namesResult;
 
-		string ptsResult = "";
-		for(int i=0; i<pointArr.Length; i++){
-			if (pointArr[i]>=0)
-				ptsResult = ptsResult + pointArr[i] + '\n';
-			else
-				ptsResult = ptsResult + '\n';
-		}
-		ptsResult = ptsResult.Substring(0,ptsResult.Length - 1);
-		points.text = ptsResult;
+//		string ptsResult = "";
+//		for(int i=0; i<pointArr.Length; i++){
+//			if (pointArr[i]>=0)
+//				ptsResult = ptsResult + pointArr[i] + '\n';
+//			else
+//				ptsResult = ptsResult + '\n';
+//		}
+//		ptsResult = ptsResult.Substring(0,ptsResult.Length - 1);
+//		points.text = ptsResult;
 
 	}
 
@@ -74,6 +75,7 @@ public class RankingManager : MonoBehaviour {
 				GlobalVars.nameArr = this.nameArr;
 
 				//Debug.Log (pointArr);
+				transform.GetChild(i).GetComponent<NmPtObj>().setBold();
 				initText();
 				break;
 			}

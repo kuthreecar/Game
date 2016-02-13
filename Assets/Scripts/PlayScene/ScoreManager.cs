@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour {
 	}
 	
 	public void addPoint(int value){
+		Debug.Log ("score added by " + value);
 		GlobalVars.point += value;
 		tm.text = "Score: " + GlobalVars.point;
 	}

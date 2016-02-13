@@ -14,7 +14,7 @@ public static class GlobalVars {
 	}
 	public static Team team = Team.Batu;
 
-	public static bool canBigAct = false;
+	public static bool canBigAct = true;
 
 	
 	public static T[] AddItemToArray <T>(this T[] original, T itemToAdd, int position) {
@@ -30,9 +30,9 @@ public static class GlobalVars {
 	}
 
 	public static string[] nameArr= new string[]{
-		"aaaaa",
-		"bbbbb",
-		"ccccc",
+		"杰希的老公BE",
+		"藍雨的炒麵小精靈",
+		"消失的POLI",
 		"",
 		"",
 		"",
@@ -42,9 +42,9 @@ public static class GlobalVars {
 		""
 	};
 	public static int[] pointArr= new int[]{
-		10000,
-		5000,
-		100,
+		600,
+		400,
+		200,
 		-1,
 		-1,
 		-1,

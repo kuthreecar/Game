@@ -15,6 +15,8 @@ public class BigActButton : MonoBehaviour {
 	public Sprite activeBtn;
 	public Sprite inactiveBtn;
 
+	public GameObject bigActEvent;
+
 	// Use this for initialization
 	void Start () {
 		resetCD();
@@ -58,7 +60,10 @@ public class BigActButton : MonoBehaviour {
 			anim.playAnim();
 		}
 
-		yield return new WaitForSeconds (2f);
+		yield return new WaitForSeconds (1.5f);
+		Instantiate (bigActEvent);
+		yield return new WaitForSeconds (1f);
+
 		foreach (BigAct bigAct in bigActArr) {
 				bigAct.killAll ();
 		}
@@ -97,11 +102,17 @@ public class BigActButton : MonoBehaviour {
 		refreshSprite ();
 	}
 
+	public void setEvent(GameObject baevent){
+		bigActEvent = baevent;
+	}
+
 	void refreshSprite(){
 		if (enabledBtn) {
 			GetComponent<SpriteRenderer> ().sprite = activeBtn;
+			GetComponent<Collider>().enabled = true;
 		} else {
 			GetComponent<SpriteRenderer> ().sprite = inactiveBtn;
+			GetComponent<Collider>().enabled = false;
 		}
 	}
 

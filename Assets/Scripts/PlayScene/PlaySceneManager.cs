@@ -28,6 +28,8 @@ public class PlaySceneManager : MonoBehaviour {
 	public SpriteScript shader;
 	public GameObject scoreText;
 
+	public GameObject gameEndLogo;
+
 	public bool gameEnds = false;	
 	void Awake() {
 		if (instance==null) {
@@ -136,7 +138,7 @@ public class PlaySceneManager : MonoBehaviour {
 
 	public void instantiateScoreText(Vector3 pos, string score){
 		GameObject newScore = Instantiate (scoreText) as GameObject;
-		Debug.Log ("score text position = " + pos);
+		//Debug.Log ("score text position = " + pos);
 		newScore.transform.position = pos;
 		newScore.GetComponent<ScoreText>().setText(score);
 	}
@@ -150,7 +152,9 @@ public class PlaySceneManager : MonoBehaviour {
 		gameEnds = true;
 		shader.Show ();
 		GamePause.pauseGame();
-		yield return new WaitForSeconds (2.5f);
+		yield return new WaitForSeconds (0.2f);
+		Instantiate (gameEndLogo);
+		yield return new WaitForSeconds (2f);
 		Application.LoadLevel ("RankingScene"); 
 	}
 
