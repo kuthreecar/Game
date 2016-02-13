@@ -10,7 +10,8 @@ public class BigActButton : MonoBehaviour {
 
 	private float startTime;
 	public float cdTime = 10;
-	
+	public int bonusPoint = 30;
+
 	public Sprite activeBtn;
 	public Sprite inactiveBtn;
 
@@ -39,6 +40,7 @@ public class BigActButton : MonoBehaviour {
 	IEnumerator startBigAct(){
 		Debug.Log ("kill it all!!");
 		GamePause.pauseGame ();
+		PlaySceneManager.addScore (bonusPoint);
 		//GameObject bigAct = GameObject.Find("BigAct");
 		List<BigAct> bigActArr=new List<BigAct>();
 		for (int i = 0; i < bigActGo.transform.childCount; ++i)
@@ -71,9 +73,11 @@ public class BigActButton : MonoBehaviour {
 	}
 
 	void enableBigAct(){
-		enabledBtn = true;
-		//GetComponent<SpriteRenderer> ().sprite = activeBtn;
-		refreshSprite ();
+		if ( GlobalVars.canBigAct ){
+			enabledBtn = true;
+			//GetComponent<SpriteRenderer> ().sprite = activeBtn;
+			refreshSprite ();
+		}
 	}
 
 	void disableBigAct(){

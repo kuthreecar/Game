@@ -37,10 +37,12 @@ public class EnemyScript : EnemyType {
 			}
 
 			if (successp) {
-				dies ();
+				string scoreText = "+" + score;
 				PlaySceneManager.addScore (score);
+				PlaySceneManager.getInstance().instantiateScoreText(transform.localPosition, scoreText);
+				dies ();
+
 			}
-			//Destroy (gameObject);
 		}
 
 	}

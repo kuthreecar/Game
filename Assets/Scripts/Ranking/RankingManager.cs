@@ -28,6 +28,7 @@ public class RankingManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GamePause.continueGame();
 		nameArr = GlobalVars.nameArr;
 		pointArr = GlobalVars.pointArr;
 		initText ();

@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour {
 	void Update () {
 		float length = transform.localScale.x;
 		if ((length/totalLength)*100 > player.getHealth()){
-			transform.localScale -= new Vector3(decreaseSpeed*Time.time,0f,0f);
+			transform.localScale -= new Vector3(decreaseSpeed,0f,0f);
 		}
 	}
 

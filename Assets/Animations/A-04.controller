@@ -26,7 +26,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SelectBg
-  m_Speed: .0500000007
+  m_Speed: .00999999978
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 81d93e215ff104a56b237d057be3c1f9, type: 2}

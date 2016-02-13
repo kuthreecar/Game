@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 		playerHealth -= value;
 		if (playerHealth <= 0) {
 			playerHealth = 0;
-			PlaySceneManager.endGame();
+			StartCoroutine(PlaySceneManager.getInstance().endGame());
 		}
 		healthText.text = playerHealth.ToString();
 	}

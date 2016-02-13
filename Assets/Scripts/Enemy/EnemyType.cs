@@ -57,8 +57,13 @@ public class EnemyType : MonoBehaviour {
 
 	protected void dies(){
 		if (isKilled) {
-						Destroy (gameObject);
-				}
+			Collider collider = gameObject.GetComponent<Collider>();
+			if (collider!=null){
+				collider.enabled = false;
+			}
+
+			Destroy (gameObject);
+		}
 	}
 
 }

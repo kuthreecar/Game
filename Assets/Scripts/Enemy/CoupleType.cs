@@ -36,8 +36,9 @@ public class CoupleType : EnemyType {
 	public void getMurdered(){
 		if (!isKilled) {
 			isKilled = true;
+			string scoreText = "+" + score;
 			PlaySceneManager.addScore (score);
-			//Destroy(gameObject);
+			PlaySceneManager.getInstance().instantiateScoreText(transform.position, scoreText);
 			dies ();
 		}
 	}

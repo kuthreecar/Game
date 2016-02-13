@@ -23,7 +23,10 @@ public class PlaySceneManager : MonoBehaviour {
 	public List<GameObject> enemyOrgArr;
 	private float startTime;
 	private float startTime2;
-	private int spawnNo=1;
+	//private int spawnNo=1;
+
+	public SpriteScript shader;
+	public GameObject scoreText;
 
 	public bool gameEnds = false;	
 	void Awake() {
@@ -45,7 +48,7 @@ public class PlaySceneManager : MonoBehaviour {
 		//for (int i=0; i<10; i++){
 			//spawn(i);
 		//}
-		spawn();
+		//spawn();
 		startTime = Time.time;
 		startTime2 = Time.time;
 		gameEnds = false;
@@ -55,7 +58,7 @@ public class PlaySceneManager : MonoBehaviour {
 	void Update () {
 		if (!GamePause.isPause()){
 			float spawnTempTime = spawnTime/(totalSpeed*10);
-			Debug.Log ("spawn at " + spawnTempTime);
+			//Debug.Log ("spawn at " + spawnTempTime);
 			if (Time.time - startTime > 2) {
 				totalSpeed += totalAcc;
 				startTime = Time.time;
@@ -131,16 +134,24 @@ public class PlaySceneManager : MonoBehaviour {
 		}
 	}
 
+	public void instantiateScoreText(Vector3 pos, string score){
+		GameObject newScore = Instantiate (scoreText) as GameObject;
+		Debug.Log ("score text position = " + pos);
+		newScore.transform.position = pos;
+		newScore.GetComponent<ScoreText>().setText(score);
+	}
+
 	public void decreaseHealth(int value){
 		player.reduceHealth (value);
 	}
 
-	public static void endGame(){
+	public IEnumerator endGame(){
 		Debug.Log ("Game Ends");
-		getInstance().gameEnds = true;
+		gameEnds = true;
+		shader.Show ();
 		GamePause.pauseGame();
+		yield return new WaitForSeconds (2.5f);
 		Application.LoadLevel ("RankingScene"); 
-		GamePause.continueGame();
 	}
 
 	public void resetTimers(){
